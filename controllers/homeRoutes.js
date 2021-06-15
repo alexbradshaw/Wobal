@@ -59,7 +59,7 @@ router.get('/login', (req, res) => {
 });
 
 // DELETE a comment in a post in the feed
-router.delete('/comment:id', async (req, res) => {
+router.delete('/comment/:id', async (req, res) => {
   try {
     const commentData = await Comments.destroy({
       where: {

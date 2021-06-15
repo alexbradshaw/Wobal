@@ -7,16 +7,18 @@
 
             <img src="{{post.photo}}" class="card-img-top" alt="...">
             <div class="card-body">
-                <p class="card-text">{{post.description}}</p>
+                <p class="card-text">{{post.description}}
+                   <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">delete</button> 
+                </p>
             </div>
             <div class="">
             <label for="" style="font-size: 10px"></label>
             <input style="height: 30px; width: 80%" placeholder="Type a Comment..." name=""></input>
-          </div id>
+            <button class="btn btn-sm btn-danger delete-comment" data-id="{{comment.id}}">delete</button>
+          </div>
             {{#each post.Comments as |comment|}}
                 <div style="padding:10px; border: red; background:#dedede">
                     <p > {{comment.description}}</p>
-                    <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">delete</button>
                 </div>
             {{/each}}
 
@@ -25,3 +27,5 @@
     </li>
 {{/each}}
 </ul>
+
+<script src="/js/newpost.js"></script>
