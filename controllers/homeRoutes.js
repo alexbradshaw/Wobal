@@ -58,4 +58,24 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// To delete a comment - MD
+router.delete('/homepage', async (req, res) => {
+  try {
+    const commentData = await Comment.destroy({
+        where: {
+            id: req.params.id,
+        },
+    });
+
+    if (!commentData) {
+        res.status(404).json({ message: 'No comment found with this id'});
+        return;
+    }
+
+      res.status(200).json(commentData);    
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

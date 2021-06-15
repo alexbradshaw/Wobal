@@ -16,6 +16,8 @@
             {{#each post.Comments as |comment|}}
                 <div style="padding:10px; border: red; background:#dedede">
                     <p > {{comment.description}}</p>
+                    {{!-- Delete button - MD --}}
+                    <button class="delete-comment" data-id="{{comment.description}}">  DELETE</button>
                 </div>
             {{/each}}
         </div>
